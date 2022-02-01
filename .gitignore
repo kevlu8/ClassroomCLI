@@ -6,3 +6,5 @@ Debug/
 *.obj
 *.iobj
 *.ipdb
+*.env
+node_modules/
