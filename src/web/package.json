@@ -1,0 +1,23 @@
+{
+  "name": "classroom-helper-web",
+  "version": "1.0.0",
+  "description": "Google Classroom Helper (Web Application Version)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevlu8/ClassroomCLI.git"
+  },
+  "author": "pepeworm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevlu8/ClassroomCLI/issues"
+  },
+  "homepage": "https://github.com/kevlu8/ClassroomCLI#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
+  }
+}
