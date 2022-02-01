@@ -1,4 +1,10 @@
 #pragma once
 #include <iostream>
-#include <curl/curl.h>
+#include <string>
 #include <Windows.h>
+#include <lmcons.h>
+#include <filesystem>
+#include <curl/curl.h>
+#include <sstream>
+#include <vector>
+#include <iterator>
