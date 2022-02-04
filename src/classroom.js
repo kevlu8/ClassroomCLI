@@ -95,7 +95,7 @@ function listStudentSubmissions(accessToken, courseID, courseworkID) {
 
 }
 
-function listCourses(accessToken) {
+function listCourses(auth) {
     const classroom = google.classroom({version: 'v1', auth});
     classroom.courses.list({
         pageSize: 10,
