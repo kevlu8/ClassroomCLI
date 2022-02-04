@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^0.25.0",
+    "googleapis": "^39.2.0"
+  }
+}

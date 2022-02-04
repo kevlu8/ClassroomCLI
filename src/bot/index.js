@@ -1,29 +1,37 @@
-const { Client, Intents, MessageEmbed } = require('discord.js');
-const env = require('dotenv').config();
+const fs = require('fs');
+const { Client, Collection, Intents } = require('discord.js');
+require('dotenv').config();
+const token = process.env.TOKEN
+const clientID = process.env.CLIENT_ID
+const GCLIENT_ID = process.env.GCLIENT_ID
+const GAPI_KEY = process.env.GAPI_KEY
+
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-const token = process.env.TOKEN;
+client.commands = new Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	client.commands.set(command.data.name, command);
+}
 
 client.once('ready', () => {
 	console.log('Ready!');
-    client.user.setPresence({
-        status: "online",  
-        game: {
-            name: "your assignments",  
-            type: "LISTENING" 
-        }
-    });
 });
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
-	const { commandName } = interaction;
+	const command = client.commands.get(interaction.commandName);
 
-	if (commandName === 'ping') {
-        ping = 69;
-		await interaction.reply(`Pong! ${ping} ms`)
-        .catch(await interaction.reply("Google servers appear to be down. Try again later"))
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
 

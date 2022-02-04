@@ -8,3 +8,7 @@ Debug/
 *.ipdb
 *.env
 node_modules/
+__pycache__/
+client_secrets.json
+token.json
+tokens/
