@@ -10,3 +10,9 @@ Debug/
 /src/web/package.json
 /src/web/package-lock.json
 /src/web/.env
+*.env
+node_modules/
+__pycache__/
+client_secrets.json
+token.json
+tokens/
