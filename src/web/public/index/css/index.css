@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Aldrich", sans-serif;
+}
+
+body {
+  background-color: #1d1d1d;
+}
+
+a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #a7a7a7;
+  -webkit-transition: color 100ms linear;
+  transition: color 100ms linear;
+  display: inline-box;
+}
+
+a:hover {
+  color: #eeeeee;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Aldrich", sans-serif;
+}
+
+body {
+  background-color: #1d1d1d;
+}
+
+a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #a7a7a7;
+  -webkit-transition: color 100ms linear;
+  transition: color 100ms linear;
+  display: inline-box;
+}
+
+a:hover {
+  color: #eeeeee;
+}
+
+* {
+  border: 1px solid #00ffff;
+}
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1.5rem 0rem;
+  background-color: #111111;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .main {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .main .hamburger-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 21px;
+}
+
+nav .main .hamburger-menu.clicked {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .main .hamburger-menu.clicked .line:nth-child(1) {
+  -webkit-transform: rotate(45deg) translateY(2px);
+          transform: rotate(45deg) translateY(2px);
+}
+
+nav .main .hamburger-menu.clicked .line:nth-child(2) {
+  -webkit-transform: rotate(-45deg) translateY(-2px);
+          transform: rotate(-45deg) translateY(-2px);
+}
+
+nav .main .hamburger-menu.clicked .line:nth-child(3) {
+  display: none;
+}
+
+nav .main .hamburger-menu .line {
+  height: 3px;
+  width: 100%;
+  background-color: #a7a7a7;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+nav .main .hamburger-menu:hover {
+  cursor: pointer;
+}
+
+nav .main .hamburger-menu:hover .line {
+  background-color: #eeeeee;
+}
+
+nav .nav-links-container.hidden {
+  display: none;
+}
+
+nav .nav-links-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .nav-links-container ul li {
+  margin-top: 0.4rem;
+  list-style: none;
+}
+
+nav .nav-links-container ul li:first-child {
+  margin-top: 1.4rem;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav .main {
+    width: 0;
+    display: inline-block;
+  }
+  nav .main .hamburger-menu {
+    display: none;
+  }
+  nav .nav-links-container, nav .nav-links-container.hidden {
+    display: inline-block;
+  }
+  nav .nav-links-container ul, nav .nav-links-container.hidden ul {
+    display: inline-block;
+  }
+  nav .nav-links-container ul li, nav .nav-links-container.hidden ul li {
+    margin: 0;
+    display: inline-block;
+  }
+}
+/*# sourceMappingURL=index.css.map */

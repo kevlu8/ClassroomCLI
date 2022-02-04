@@ -6,3 +6,7 @@ Debug/
 *.obj
 *.iobj
 *.ipdb
+/src/web/node_modules/*
+/src/web/package.json
+/src/web/package-lock.json
+/src/web/.env

@@ -1,0 +1,130 @@
+@import "./defaults", "./colors";
+
+* {
+    border: 1px solid #00ffff;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1.5rem 0rem;
+    background-color: $heavyDark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        // .space {
+        //     width: 35vw;
+        // }
+
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 30px;
+            height: 21px;
+
+            &.clicked {
+                justify-content: center;
+
+                .line {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translateY(2px);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(-45deg) translateY(-2px);
+                    }
+
+                    &:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+
+            .line {
+                height: 3px;
+                width: 100%;
+                background-color: $fadedWhite;
+                transition: background-color 200ms linear;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                .line {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    .nav-links-container {
+        &.hidden {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            li {
+                margin-top: 0.4rem;
+                list-style: none;
+
+                &:first-child {
+                    margin-top: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        align-items: center;
+
+        .main {
+            width: 0;
+            display: inline-block;
+
+            .hamburger-menu {
+                display: none;
+            }
+
+            // .space {
+            //     width: 70vw;
+            // }
+        }
+
+        .nav-links-container, .nav-links-container.hidden {
+            display: inline-block;
+
+            ul {
+                display: inline-block;
+
+                li {
+                    margin: 0;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+// redo this shit
