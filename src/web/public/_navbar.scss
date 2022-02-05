@@ -1,92 +1,75 @@
 @import "./defaults", "./colors";
 
-* {
-    border: 1px solid #00ffff;
-}
-
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     z-index: 1;
-    padding: 1.5rem 0rem;
-    background-color: $heavyDark;
+    padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
+    border-bottom: 1px solid $fadedWhite;
 
-    .main {
-        width: 100%;
+    .hamburger-menu {
+        position: absolute;
+        top: 1.7rem;
+        right: 2rem;
+        height: 21px;
+        width: 30px;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
 
-        // .space {
-        //     width: 35vw;
-        // }
-
-        .hamburger-menu {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width: 30px;
-            height: 21px;
-
-            &.clicked {
-                justify-content: center;
-
-                .line {
-                    &:nth-child(1) {
-                        transform: rotate(45deg) translateY(2px);
-                    }
-
-                    &:nth-child(2) {
-                        transform: rotate(-45deg) translateY(-2px);
-                    }
-
-                    &:nth-child(3) {
-                        display: none;
-                    }
-                }
-            }
+        &:hover {
+            cursor: pointer;
 
             .line {
-                height: 3px;
-                width: 100%;
-                background-color: $fadedWhite;
-                transition: background-color 200ms linear;
+                background-color: $dark;
             }
+        }
 
-            &:hover {
-                cursor: pointer;
+        &.clicked {
+            justify-content: center;
 
-                .line {
-                    background-color: $white;
+            .line {
+                &:nth-child(1) {
+                    transform: rotate(45deg) translateY(2px);
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(-45deg) translateY(-2px);
+                }
+
+                &:nth-child(3) {
+                    display: none;
                 }
             }
+        }
+
+        .line {
+            height: 3px;
+            width: 100%;
+            background-color: $fadedWhite;
+            transition: 100ms background-color linear;
         }
     }
 
     .nav-links-container {
+        width: 100%;
+        margin-top: 1.5rem;
+
         &.hidden {
             display: none;
         }
 
         ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: center;
 
             li {
-                margin-top: 0.4rem;
                 list-style: none;
-
-                &:first-child {
-                    margin-top: 1.4rem;
-                }
             }
         }
     }
@@ -94,37 +77,32 @@ nav {
 
 @media (min-width: 1024px) {
     nav {
-        display: flex;
-        flex-direction: row; 
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
 
-        .main {
-            width: 0;
-            display: inline-block;
-
-            .hamburger-menu {
-                display: none;
-            }
-
-            // .space {
-            //     width: 70vw;
-            // }
+        .hamburger-menu {
+            display: none;
         }
 
-        .nav-links-container, .nav-links-container.hidden {
+        .nav-links-container,
+        .nav-links-container.hidden {
             display: inline-block;
+            margin: 0;
+            width: 270px; // Change value if new navigation bar items added
 
             ul {
-                display: inline-block;
+                margin: 0;
 
                 li {
-                    margin: 0;
                     display: inline-block;
+                    margin-right: 1rem;
+
+                    &:last-child {
+                        margin: 0;
+                    }
                 }
             }
         }
     }
 }
-
-// redo this shit

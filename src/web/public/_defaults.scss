@@ -4,21 +4,18 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Aldrich", sans-serif;
-}
-
-body {
-    background-color: $dark;
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
     font-size: 1.3rem;
     text-decoration: none;
-    color: $fadedWhite;
     transition: color 100ms linear;
     display: inline-box;
+    color: $fadedWhite;
+    transition: 150ms color linear;
 
     &:hover {
-        color: $white;
+        color: $dark;
     }
 }
